@@ -1,7 +1,19 @@
-import colorama
+import colorama, sys, os
+from types import Dict
+
+def add_to_env(elements: Dict):
+    #if .env, skip this step
+    #else ask input for each element ? (maybe only have gemini api key as input, so maybe not dict)
+    for element in elements:
+        pass
+        #add each element to env for initial config
 
 def clear_terminal():
-    pass
+    if sys.platform == "win32":
+        os.system('cls')
+    else:
+        os.system('clear')
+
 
 def print_home():
     print("""______                                      _______                    _____ 
@@ -24,8 +36,12 @@ def ask_mode() -> int:
 
 """)
 
-    try: response = input("> Select a mode: ")
     #if anything else than number, find a way to re ask and clear user input till it works
+    try:
+        response = input("> Select a mode: ")
+
     except TypeError: print("Input should be a number!")
     except Exception as e: print(f"Unknown error: {e}")
-    finally: return response
+
+    finally:
+        return response

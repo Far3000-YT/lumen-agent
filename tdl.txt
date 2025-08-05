@@ -2,6 +2,7 @@ lumen agent:
 
 colorama for colors
 options choice with keys, enter... etc
+auto env input??
 
 on every action, log it, for example :
 - created xxx (tokens: +xxx)

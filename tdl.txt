@@ -1,0 +1,32 @@
+lumen agent:
+
+colorama for colors
+options choice with keys, enter... etc
+
+on every action, log it, for example :
+- created xxx (tokens: +xxx)
+- edited xxx (before: xxx - after: xxx - tokens: +-xxx)
+- deleted xxx (tokens: -xxx)
+
+- need functions for every action, ai can access these functions to do stuff with the folder (click: x and y ; add_folder(name)... etc)
+- agent could create its own functions to interact with a project ? functions stored in utils.agent for example and ai would use / reuse, like if its a long command or a long thing to do it would create its own function from that function to optimize time)
+- add a rule that makes ai can't go out of root folder, and only allow changes in the folder where lumen agent was ran in (security feature)
+
+- gemini 2.5 flash lite : logs (history), recap, or talk to, upgrades... etc (very good at understanding context and being objective, use it as a strength, might not be smart to output code, but is smart on other parts)
+- gemini 2.5 flash : actions choice, what to do, what action to choose etc...
+- gemini 2.5 pro : add/delete code, or find a way for web mode to get position on click etc... any smart / technical part goes to 2.5 pro
+
+many modes:
+- web mode = autonomous for 100% of the time, does what u ask on ur browser etc, clicks etc)
+- code mode = reveals more options (start, do, fix, rewrite, upgrade... etc)
+- paper mode = write documents, can insert images at specific rates (optional, search images and insert them automatically), can do good pdf's overall (anti ai detection ?)
+- exit option or key to quit?
+
+ai in prompt, has actions available and receives instructions 
+
+for fix, it should explain the change with 2.5 pro in a json at the end, and do that change so if the fix fails it discards it if it’s the same error etc 
+you give it tasks, it iterates infinitely till the task is ENTIRELY done (don’t let the ai be lazy) (image reco option where for webdev for example it would screenshot or record automatically the whole page and rate it till it gets the wanted result)
+
+above 300k tokens, rule = remake chat
+below = continue 
+if project starts with < 150k then 300k is limit otherwise its x2 the context for the limit so the model doesn’t become bad
